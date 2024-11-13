@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     path('myfolders/', include('myfolders.urls')),
+    path('analytics/', include('analytics.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
