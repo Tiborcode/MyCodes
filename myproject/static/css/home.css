@@ -1,0 +1,43 @@
+body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+        }
+
+.hero-section {
+    background: linear-gradient(135deg, #0066cc, #33ccff);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.cards-section {
+    padding: 40px 20px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.chart-container {
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
