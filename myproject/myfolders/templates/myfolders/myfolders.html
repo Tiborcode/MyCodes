@@ -6,5 +6,23 @@
 </head>
 <body>
 <h1>This is the Folders page</h1>
+    <div>
+        <form action="{% url 'myfolders:folders' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>
+                {{ form.file }}
+            </p>
+            <p><input type="submit" value="Upload"></p>
+
+        </form>
+        <p>
+            <a href="/analytics"> Analyitcs</a>
+        </p>
+        <p>
+            <a href="/"> go to home</a>
+
+        </p>
+
+    </div>
 </body>
 </html>
