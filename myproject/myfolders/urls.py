@@ -4,7 +4,8 @@ from . import views
 app_name = 'myfolders'
 
 urlpatterns = [
-    path('', views.myfolders, name='folders'),
+    path('', views.upload_file, name='upload'),
+    path('delete/<str:filename>/', views.delete_file, name='delete_file'),
 
 
 ]

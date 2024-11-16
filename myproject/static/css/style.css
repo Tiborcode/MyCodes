@@ -1,0 +1,17 @@
+.dropzone {
+    background-color: #f9f9f9;
+    border: 2px dashed #ddd;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.dropzone.dragover {
+    background-color: #e3f7fc;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
