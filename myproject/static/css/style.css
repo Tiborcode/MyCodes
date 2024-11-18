@@ -15,3 +15,23 @@
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
 }
+
+.dropzone {
+    border: 2px dashed #007bff;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.dropzone.dragover {
+    background-color: #f0f8ff;
+}
+
+.file-list {
+    margin-top: 15px;
+}
+
+.file-list div {
+    margin: 5px 0;
+}
