@@ -48,3 +48,7 @@ def delete_file(request, filename):
         return JsonResponse({'status': 'success', 'message': 'File deleted successfully'})
     else:
         return JsonResponse({'status': 'error', 'message': 'File not found'}, status=404)
+
+def list_files(request):
+    files = Files.objects.all()
+    return render(request, 'myfolders/file_list.html', {'files': files})

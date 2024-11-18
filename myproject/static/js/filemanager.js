@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 uploadFiles(formData);
+                fileList.innerHTML = '';
             } else {
                 alert('Please select a file first!');
             }
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //    }
 
     function uploadFiles(formData) {
-        fetch('/myfolders/', {  // Ensure '/upload/' matches your Django view URL pattern
+        fetch('/myfolders/', {  //  Django view URL pattern reference
             method: 'POST',
             body: formData,
             headers: {

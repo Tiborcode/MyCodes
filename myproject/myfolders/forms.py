@@ -1,9 +1,12 @@
 from django import forms
+from .models import Files
 
 
 class UploadFilesForm(forms.Form):
     # file = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
-    file = forms.FileField()
+    # file = forms.FileField()
+    model = Files
+    fields = ['title', 'file']
 
 # class MultipleFileInput(forms.ClearableFileInput):
 #     allow_multiple_selected = True
