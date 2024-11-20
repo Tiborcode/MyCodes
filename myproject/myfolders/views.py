@@ -28,12 +28,20 @@ from .models import Files
 
 @csrf_exempt
 def upload_file(request):
+    # if request.method == 'POST':
+    #     form = UploadFilesForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()  # `uploaded_at` will be set automatically
+    #         return redirect('list_files')
     if request.method == 'POST' and request.FILES:
         try:
-            files = request.FILES.getlist('files')
+            file = request.FILES.get('files')
+            title = request.POST.get('title')
             fs = FileSystemStorage(location='uploads/')
-            for file in files:
-                fs.save(file.name, file)
+            fs.save(file.name, file)
+            new_entry = Files.objects.create(title=title, file=file)
+            new_entry.save()
+
             return JsonResponse({'status': 'success', 'message': 'Files uploaded successfully'})
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)}, status=500)

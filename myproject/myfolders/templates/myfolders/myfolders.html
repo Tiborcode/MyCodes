@@ -11,9 +11,18 @@
             <div class="container mt-5">
                 <h2 class="mb-4">File Management</h2>
 
+                     <p>File title is:</p>
+                    <form id="titleUploadForm" method="post" enctype="text/plain" >
+
+                        {% csrf_token %}
+                        <input type="text" id="titleInput" multiple>
+                    </form>
+
                     <p>Drag and drop files here or click to upload</p>
                     <form id="fileUploadForm" method="post" enctype="multipart/form-data" style="display: none;">
-                    {% csrf_token %}
+
+                        {% csrf_token %}
+
                         <input type="file" id="fileInput" multiple>
                     </form>
 

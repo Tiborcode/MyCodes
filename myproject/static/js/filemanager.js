@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('fileInput');
+    const titleInput = document.getElementById('titleInput')
     const fileList = document.getElementById('fileList');
     const uploadBtn = document.getElementById('uploadBtn');
     const uploadButton = document.getElementById('uploadButton');
@@ -36,11 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
 //        handleFiles(e.target.files);
     });
 
+    titleInput.addEventListener('change', (e) =>{
+        titleText = titleInput.value
+        console.log(titleText)
+    })
+
     uploadButton.addEventListener('click', () => {
             if (selectedFiles.length > 0) {
                 const formData = new FormData();
                 selectedFiles.forEach(file => {
                     formData.append('files', file);
+                    formData.append('title', titleText);
+//                    console.log(titleText);
+//                    for (let i = 0; i < formData.length; i++) {
+//                      console.log(formData[i]);
+//                    }
                 });
 
                 uploadFiles(formData);
@@ -80,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Files uploaded successfully!');
+//                alert('Files uploaded successfully!');
                 // Optionally update UI with new files
             } else {
                 alert('Error: ' + data.message);
