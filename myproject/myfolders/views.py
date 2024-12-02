@@ -5,6 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from .forms import UploadFilesForm
 import os
 from .models import Files
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -27,6 +28,7 @@ from .models import Files
 
 
 @csrf_exempt
+@login_required(login_url="/users/login/")
 def upload_file(request):
     # if request.method == 'POST':
     #     form = UploadFilesForm(request.POST, request.FILES)
@@ -49,6 +51,7 @@ def upload_file(request):
         form = UploadFilesForm()
     return render(request, 'myfolders/myfolders.html', {'form': form})
 
+@login_required(login_url="/users/login/")
 def delete_file(request, filename):
     file_path = os.path.join('uploads/', filename)
     if os.path.exists(file_path):

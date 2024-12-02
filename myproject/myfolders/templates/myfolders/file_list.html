@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Django File Management</title>
+    <link rel="stylesheet" href="../../static/css/list.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container mt-4">
         <h2>List of Uploaded Files</h2>
-        <ul>
-            {% for file in files %}
-                <li><a href="{{ file.file.url }}" download>{{ file.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <div class="file_list_box">
+             <div class="file_list">
 
-        <p>
-            <a href="/myfolders">myfolders</a>
-        </p>
-        <p>
-            <a href="/analytics"> Analyitcs</a>
-        </p>
-        <p>
-            <a href="/"> go to home</a>
+                 <table style="width:100%">
+                      <tr>
+                        <th>Title</th>
+                        <th>File</th>
+                        <th>Other</th>
+                      </tr>
+                    {% for file in files %}
+                      <tr>
 
-        </p>
+                        <td><a href="{{ file.file.url }}" download>{{ file.title }}</a></td>
+                        <td> {{ file.file }} </td>
+                        <td> </td>
+
+                      </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="link_box">
+            <br>
+              <p>
+                <a href="/myfolders">myfolders</a>
+            </p>
+            <p>
+                <a href="/analytics"> Analyitcs</a>
+            </p>
+            <p>
+                <a href="/"> go to home</a>
+
+            </p>
+
+        </div>
+
+
 </div>
 </body>
 </html>
