@@ -17,6 +17,7 @@ password: NimroD951$
 aws superuser
 username: admin
 password: NimroD951$
+username: admin_2
 
 #start virtual environment
 myvenv\Scripts\activate.bat
@@ -26,3 +27,8 @@ py.manage.py runserver
 
 # aws remote PostgreSQL database details:
 https://www.youtube.com/watch?v=z_FN0Zu-Z3Q&t=935s
+
+#aws app deployment setup:
+https://www.youtube.com/watch?v=uiPSnrE6uWE
+https://askubuntu.com/questions/1465218/pip-error-on-ubuntu-externally-managed-environment-%C3%97-this-environment-is-extern
+https://stackoverflow.com/questions/8237842/django-core-exceptions-improperlyconfigured-error-loading-psycopg-module-no-mo
