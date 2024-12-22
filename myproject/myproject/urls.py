@@ -28,4 +28,5 @@ urlpatterns = [
     path('', views.home),
     path('myfolders/', include('myfolders.urls')),
     path('analytics/', include('analytics.urls')),
+    path('scrapping/', include('scrapping.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

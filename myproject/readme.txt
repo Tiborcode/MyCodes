@@ -10,7 +10,7 @@ KMS key ID
 574630b2-e146-4540-9347-12e73cc675eb
 https://eu-north-1.console.aws.amazon.com/ec2/home?region=eu-north-1#Instances:
 
-superuser:
+remote database:
 username: keke
 password: NimroD951$
 
