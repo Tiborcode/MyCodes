@@ -38,10 +38,15 @@ http://13.48.25.12:8000/
 myvenv\Scripts\activate.bat
 deactivate
 
-
+pip list
+pip install pandas
+pip install
 
 #start server:
 py.manage.py runserver
+
+#aws server url
+https://signin.aws.amazon.com/signin?client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcodesuite&redirect_uri=https%3A%2F%2Feu-north-1.console.aws.amazon.com%2Fcodesuite%2Fsettings%2Fconnections%3Fregion%3Deu-north-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&page=resolve&code_challenge=h6hQ6VOY110tId3_BTboSTsemZXRAngMk0gyU-nF3Gw&code_challenge_method=SHA-256&backwards_compatible=true
 
 # aws remote PostgreSQL database details:
 https://www.youtube.com/watch?v=z_FN0Zu-Z3Q&t=935s
