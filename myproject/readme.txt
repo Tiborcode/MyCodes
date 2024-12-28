@@ -56,3 +56,6 @@ https://www.youtube.com/watch?v=uiPSnrE6uWE
 https://askubuntu.com/questions/1465218/pip-error-on-ubuntu-externally-managed-environment-%C3%97-this-environment-is-extern
 https://stackoverflow.com/questions/8237842/django-core-exceptions-improperlyconfigured-error-loading-psycopg-module-no-mo
 https://www.youtube.com/watch?v=hxYIpH94u20
+
+#rapidapi to get data from html:
+https://rapidapi.com/alphawave/api/financial-statements/playground/apiendpoint_1cf7a51e-32f9-41a5-901a-fa4f66ba9807
