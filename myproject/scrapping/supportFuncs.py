@@ -74,10 +74,34 @@ def get_incomestatement_balancesheet_cashflow_data_from_seeking_alpha(ticker):
     print(data)
 
 
-def process_json_file():
+def read_json_file():
     with open("data_2.json", "r") as file:
         data = json.load(file)
     return data
+
+def process_json_file():
+    main_key_list = ["9/30/2016", "9/30/2017", "9/30/2018", "9/30/2019", "9/30/2020", "9/30/2021", "9/30/2022", "9/30/2023", "9/30/2024"]
+    sub_key_list = ["Cost of Revenue", "Operating Expense", "Total Revenue"]
+    data = read_json_file()
+
+    try:
+        for item in main_key_list:
+            costOfRevenue = data[item]["Cost of Revenue"]
+            OPEX = data[item]["Operating Expense"]
+            totalRevenue = data[item]["Total Revenue"]
+            print("thae date is", item)
+            print(" cost of rev", costOfRevenue)
+            print("OPEX", OPEX)
+            print("total rev", totalRevenue)
+    except Exception as e:
+        print("the error is ", e)
+
+
+
+    return None
+
+def print_json():
+    process_json_file()
 
 # def scraping_sec_files():
 #     # create request header
