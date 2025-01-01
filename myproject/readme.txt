@@ -27,7 +27,7 @@ python3 -m django -version or django-admin –version
 #activate venv
 source .venv/bin/activate
 pip install requests
-pip install django
+
 
 pip install django
 python3 manage.py runserver 0.0.0.0:8000
@@ -59,3 +59,7 @@ https://www.youtube.com/watch?v=hxYIpH94u20
 
 #rapidapi to get data from html:
 https://rapidapi.com/alphawave/api/financial-statements/playground/apiendpoint_1cf7a51e-32f9-41a5-901a-fa4f66ba9807
+https://rapidapi.com/alphawave/api/financial-statements/playground/apiendpoint_b4be9cff-500e-4b0a-a5a9-a8d73f9cde7a
+
+#secFile scraping
+https://github.com/AdamGetbags/secAPI/blob/main/secFilingScraper.py
