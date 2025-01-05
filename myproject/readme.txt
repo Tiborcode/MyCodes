@@ -24,10 +24,6 @@ sudo apt install python3-pip -y
 #check django version
 python3 -m django -version or django-admin –version
 #navigate into the project (ls -lrt; ls -lst)
-#activate venv
-source .venv/bin/activate
-pip install requests
-
 
 pip install django
 python3 manage.py runserver 0.0.0.0:8000
@@ -40,7 +36,7 @@ deactivate
 
 pip list
 pip install pandas
-pip install
+pip install requests
 
 #start server:
 py.manage.py runserver
@@ -63,3 +59,5 @@ https://rapidapi.com/alphawave/api/financial-statements/playground/apiendpoint_b
 
 #secFile scraping
 https://github.com/AdamGetbags/secAPI/blob/main/secFilingScraper.py
+https://www.youtube.com/watch?v=gpvG9vYBzwc
+https://www.sec.gov/search-filings/edgar-application-programming-interfaces

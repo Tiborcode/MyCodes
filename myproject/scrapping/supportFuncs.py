@@ -65,12 +65,18 @@ def get_incomestatement_balancesheet_cashflow_data_from_seeking_alpha(ticker):
         print("not instance of string")
         data = response_b_sheet.json()
 
-    with open("data.json", "w") as file:
+    with open("data_2_bsheet.json", "w") as file:
         file.write(response_b_sheet.text)
 
+    with open("data_2_income.json", "w") as file:
+        file.write(response_incomest.text)
+
+    with open("data_2_cash.json", "w") as file:
+        file.write(response_cashflow.text)
+
     # Reload and parse
-    with open("data.json", "r") as file:
-        data = json.load(file)
+    # with open("data_2.json_bsheet", "r") as file:
+    #     data = json.load(file)
 
     print(data)
 
