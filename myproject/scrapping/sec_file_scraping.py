@@ -8,6 +8,12 @@ import calendar  # make sure to add
 
 HEADERS = {"User-Agent": "tkelemen33@gmail.com"}
 TICKERS = ["OXY", "AAPL", "SIRI", "AMD", "NVDA"]
+
+label_dict ={
+        "us - gaap_Revenues": "revenues",
+
+    }
+
 pd.options.display.float_format = (
     lambda x: "{:,.0f}".format(x) if int(x) == x else "{:,.2f}".format(x)
 )
@@ -196,7 +202,7 @@ def annual_facts(ticker, headers=HEADERS):
     Returns:
         DataFrame: Transposed pivot table of annual financial facts.
     """
-    # Get accession numbers for 10-K filings
+    # Get accession numbers for 10-K filings, option is 10-Q
     accession_nums = get_filtered_filings(
         ticker, ten_k=True, just_accession_numbers=True, headers=headers
     )
@@ -432,7 +438,7 @@ def extract_columns_values_and_dates_from_statement(soup):
             columns.append(column_title)
 
             # Initialize values array with NaNs
-            values = [np.NaN] * len(date_time_index)
+            values = [np.nan] * len(date_time_index)
 
             # Process each cell in the row
             for i, cell in enumerate(row.select("td.text, td.nump, td.num")):
@@ -537,6 +543,9 @@ def process_one_statement(ticker, accession_number, statement_name):
         ticker (str): The stock ticker.
         accession_number (str): The SEC accession number.
         statement_name (str): Name of the financial statement.
+            - "balance_sheet"
+            - "income_statement"
+            - "cash_flow_statement"
 
     Returns:
         pd.DataFrame or None: DataFrame of the processed statement or None if an error occurs.
@@ -594,3 +603,9 @@ def rename_statement(statement, label_dictionary):
         lambda x: label_dictionary.get(x.split("_", 1)[-1], x)
     )
     return statement
+
+
+def df_num(ticker):
+    acc = get_filtered_filings(ticker, ten_k=True, just_accession_numbers=True, headers=HEADERS)
+    acc_num = acc.iloc[0].replace('-', '')
+    return acc_num

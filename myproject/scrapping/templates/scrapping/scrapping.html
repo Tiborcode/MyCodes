@@ -6,6 +6,19 @@
 </head>
 <body>
 <h2>This is Scrapping page</h2>
+
+        <p>
+            Enter your ticker here please!
+        </p>
+        <form id="tickerInputForm" method="post" enctype="text/plain" >
+
+                {% csrf_token %}
+
+                <input type="text" id="tickerInput" multiple>
+        </form>
+        <button id="tickerId" >Send Ticker</button>
+
+
       <p>
           <a href="/"> go to home</a>
       </p>
