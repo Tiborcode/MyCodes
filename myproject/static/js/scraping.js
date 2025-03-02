@@ -1,14 +1,38 @@
+console.log("javascript available")
+
 document.addEventListener('DOMContentLoaded', () => {
-    const tickerInput = document.getElementById('tickerInput');
-    const tickerButton = document.getElementById('tickerId')
+    const tickerInput = document.getElementById('text');
+    const uploadButton = document.getElementById('uploadButton')
 
-    console.log("javascript works");
+    tickerInput.addEventListener('change', (e) =>{
+        ticker = tickerInput.value;
+//        let passedData = new FormData();
+//        passedData.append('text', ticker);
+//        passedData.append('text2', 'abrakadabra')
+//
+//        console.log(ticker);
+//        console.log('read from dict', passedData.getAll('text'));
 
-
-    tickerButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        const tickerInputContent = tickerInput.value;
-        tickerInput.click();
-        console.log(tickerInputContent)
     });
-    })
+
+   uploadButton.addEventListener('click', () => {
+        let passedData = new FormData();
+        passedData.append('text', ticker);
+        passedData.append('text2', 'abrakadabra')
+        uploadFiles(passedData);
+    });
+
+    function uploadFiles(content) {
+        fetch('/scrapping/', {  //  Django view URL pattern reference
+            method: 'POST',
+            body: content,
+            headers: {
+                'X-CSRFToken': getCSRFToken() // Include CSRF token for security
+            }
+        })
+       .then(response => response.json())};
+
+    function getCSRFToken() {
+        return document.querySelector('[name=csrfmiddlewaretoken]').value;
+    }
+})

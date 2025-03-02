@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Scrapping</title>
+
 </head>
 <body>
 <h2>This is Scraping page</h2>
 
-        <p>
-            Enter your ticker here please!
-        </p>
-        <form id="tickerInputForm" method="post" enctype="text/plain" >
+        <h2>Enter Text and Process</h2>
 
+            <form id="tickerContent" method="post" enctype="text/plain">
                 {% csrf_token %}
+                <input type="text" id="text" name="text"   placeholder="Type something...">
+            </form>
 
-                <input type="text" id="tickerInput" multiple>
-        </form>
-        <button id="tickerId" >Send Ticker</button>
+            <button id="uploadButton" >Upload Files</button>
+
+        <h3>Processed Output:</h3>
+        <p id="responseText"></p>
+
+<!--        <p>-->
+<!--            Enter your ticker here please!-->
+<!--        </p>-->
+<!--        <form id="tickerInputForm" method="post" enctype="text/plain" >-->
+
+<!--                {% csrf_token %}-->
+
+<!--                <input type="text" id="tickerInput" multiple>-->
+<!--        </form>-->
+<!--        <button id="tickerId" >Send Ticker</button>-->
 
 
+<!--      <p>-->
       <p>
           <a href="/"> go to home</a>
       </p>
