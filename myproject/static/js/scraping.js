@@ -6,12 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tickerInput.addEventListener('change', (e) =>{
         ticker = tickerInput.value;
-//        let passedData = new FormData();
-//        passedData.append('text', ticker);
-//        passedData.append('text2', 'abrakadabra')
-//
-//        console.log(ticker);
-//        console.log('read from dict', passedData.getAll('text'));
+
 
     });
 
